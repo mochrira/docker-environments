@@ -1,2 +1,0 @@
-FROM php:8.1.16-apache-bullseye
-COPY env/000-default.conf /etc/apache2/sites-available/000-default.conf
