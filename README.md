@@ -8,5 +8,4 @@ docker compose -f compose.yaml up -d --build
 
 ## Accessible App
 
-Portainer (https://localhost:9443)
-Nginx Proxy Manager (http://localhost:81)
+Portainer (https://localhost:9443), Nginx Proxy Manager (http://localhost:81)
