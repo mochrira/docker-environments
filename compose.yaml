@@ -21,15 +21,14 @@ services:
     restart: always
     ports:
       - 9443:9443
+      - 8000:8000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - /data:/data
     networks:
       - environment
 
 volumes:
-  portainer_data:
-    name: portainer_data
   nginx_data:
     name: nginx_data
   nginx_certs:
