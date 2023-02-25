@@ -1,0 +1,15 @@
+version: '3'
+name: php_example
+services:
+  app:
+    container_name: php_example_app
+    image: php:8.1.16-apache-bullseye
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - php_example
+
+networks:
+  php_example:
+    driver: bridge
+    name: php_example
