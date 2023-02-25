@@ -1,3 +1,4 @@
 FROM php:8.1.16-apache-bullseye
 COPY env/app.conf /etc/apache2/sites-available/app.conf
+EXPOSE 8080
 RUN a2ensite app
