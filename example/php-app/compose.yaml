@@ -3,9 +3,12 @@ name: php_example
 services:
   app:
     container_name: php_example_app
-    image: php:8.1.16-apache-bullseye
+    image: php-apache-custom
+    build:
+      context: .
+      dockerfile: dockerfile
     volumes:
-      - ./app:/var/www/html
+      - ./app:/var/www/app
     networks:
       - php_example
 
