@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>It Works !</h1>
+    <h2>Like a magic, just pull and redeploy this</h2>
 </body>
 </html>
