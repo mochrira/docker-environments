@@ -29,6 +29,6 @@ services:
       - environment
 
 networks:
-  production:
+  environment:
     driver: bridge
     name: environment
