@@ -1,1 +1,1 @@
-<?php unknown_function(); ?>
+<?php phpinfo(); ?>
