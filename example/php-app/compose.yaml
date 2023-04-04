@@ -7,9 +7,9 @@ services:
     volumes:
       - ./app:/var/www/html
     networks:
-      - php_example
+      - php_example_dev
 
 networks:
-  php_example:
+  php_example_dev:
     driver: bridge
-    name: php_example
+    name: php_example_dev

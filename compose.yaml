@@ -1,27 +1,12 @@
 version: '3'
 name: environment
 services:
-  nginx: 
-    container_name: nginx
-    image: jc21/nginx-proxy-manager:latest
-    restart: unless-stopped
-    ports:
-      - 80:80
-      - 81:81
-      - 443:443
-    volumes:
-      - nginx_data:/data
-      - nginx_certs:/etc/letsencrypt
-    networks:
-      - environment
-
   portainer:
     container_name: portainer
     image: portainer/portainer-ce:latest
     restart: always
     ports:
       - 9443:9443
-      - 8000:8000
     volumes:
       - /data:/data
     networks:
@@ -31,19 +16,11 @@ services:
     container_name: portainer_agent
     image: portainer/agent:latest
     restart: always
-    ports:
-      - 9001:9001
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/volumes:/var/lib/docker/volumes
     networks:
       - environment
-
-volumes:
-  nginx_data:
-    name: nginx_data
-  nginx_certs:
-    name: nginx_certs
 
 networks:
   environment:
