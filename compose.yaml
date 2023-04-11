@@ -30,11 +30,11 @@ services:
       - "--api.insecure=true"
       - "--providers.docker"
     ports:
-      - "80:80"
-      - "8080:8080"
+      - 80:80
+      - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./private/traefik.yml:/traefik.yml
+      - $PWD/traefik.yml:/traefik.yml
       - $HOME/letsencrypt:/letsencrypt
     networks:
       - environment
