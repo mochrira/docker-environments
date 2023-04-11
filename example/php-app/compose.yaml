@@ -1,15 +1,17 @@
 version: '3'
-name: php_example
+name: env_example
 services:
   app:
-    container_name: php_example_app
-    image: php:8.1.16-apache-bullseye
-    volumes:
-      - ./app:/var/www/html
+    container_name: env_example_container
+    image: nginx:stable-alpine
     networks:
-      - php_example_dev
+      - environment
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.env_example.rule=Host(`env_example.local`)"
+      - "traefik.http.services.env_example.loadbalancer.server.port=80"
 
 networks:
-  php_example_dev:
-    driver: bridge
-    name: php_example_dev
+  environment:
+    name: environment
+    external: true
